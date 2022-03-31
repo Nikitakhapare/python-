@@ -16,7 +16,7 @@ def workingHr(check):
         Return:   
             returning the check variable
     """
-    switcher={ 1: 8, 2: 4, 0: 0}
+    switcher={ 1: 8, 2: 4}
     return switcher[check]
 
 def attendance(checkAttendance):
@@ -35,26 +35,21 @@ wagePerHour=20
 fullTime=1
 partTime=0
 empWorkingHr=0
-checkAttendance=random.randint(0,1)
-attendance=attendance(checkAttendance)
+totalWorkingDays=0
+maxWorkingDays=20
+totalEmpHours=0
 
-if attendance==1:   
-    print("Employee is Present")
-    check = random.randint(0,2)
-    empWorkingHr=workingHr(check)
-    empchack=random.randint(0,1)
-    if empchack==1:
-           empHr=8
-    elif empchack==2:
-            empHr=4   
-    employeeWage=empHr*wagePerHour
-    print("Daily Employee Wage for Employee is ",+employeeWage)
-
-else:
-    print("Employee is Absent")
-    empHr=0
-
-totalWage=(wagePerHour*empWorkingHr)
-print("Employee Wage= ",totalWage)
+while(totalWorkingDays<maxWorkingDays):
+    checkAttendance=random.randint(0,1)
+    attendancechake=attendance(checkAttendance)
+    if attendancechake==1:   
+        check = random.randint(1,2)
+        empWorkingHr=workingHr(check)
+        totalWorkingDays+=1
+        totalEmpHours=totalEmpHours+empWorkingHr    
+  
+totalWage=(wagePerHour*totalEmpHours)
+print("Employee Working Days is ", totalWorkingDays)
+print("Monthly Employee Wage= ",totalWage)
 
 
