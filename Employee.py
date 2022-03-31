@@ -2,8 +2,8 @@
 @Author: Nikita
 @Date: 2022-03-29 20: 56: 00
 @Last Modified by: Nikita
-@Last Modified time: 2022-03-31 : 20: 14
-@Title: Calculating Employee Wage Using Case Statement
+@Last Modified time: 2022-04-01 : 12: 58
+@Title: Calculating Employee Wage for a Month
 '''
 
 import random
