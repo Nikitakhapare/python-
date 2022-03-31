@@ -38,18 +38,22 @@ empWorkingHr=0
 totalWorkingDays=0
 maxWorkingDays=20
 totalEmpHours=0
+maxWorkingHr=100
 
-while(totalWorkingDays<maxWorkingDays):
+#while(totalWorkingDays<maxWorkingDays)and(totalEmpHours<maxWorkingHr):
+for i in range(21):
     checkAttendance=random.randint(0,1)
     attendancechake=attendance(checkAttendance)
     if attendancechake==1:   
         check = random.randint(1,2)
         empWorkingHr=workingHr(check)
-        totalWorkingDays+=1
-        totalEmpHours=totalEmpHours+empWorkingHr    
+        totalEmpHours+=empWorkingHr 
+        print(i,totalEmpHours)
+
+    if totalEmpHours >= 100:
+        break  
   
 totalWage=(wagePerHour*totalEmpHours)
-print("Employee Working Days is ", totalWorkingDays)
+print("Employee Working Days is ", i)
+print("Employee Working Hour is",totalEmpHours)
 print("Monthly Employee Wage= ",totalWage)
-
-
