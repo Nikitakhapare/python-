@@ -2,12 +2,11 @@
 @Author: Nikita
 @Date: 2022-03-29 20: 51: 00
 @Last Modified by: Nikita
-@Last Modified time: 2022-04-01 : 1: 33
-@Title: Calculating  Wage till condition of working hour or days reached
+@Last Modified time: 2022-04-01 : 7: 38
+@Title: Function To Calculate Total Working Hour
 '''
 
 import random
-
 
 def workingHr(check):
     """
@@ -44,20 +43,31 @@ maxWorkingDays = 20
 totalEmpHours = 0
 maxWorkingHr = 100
 
-for i in range(20):
+def calculateWage():
 
-    checkAttendance = random.randint(0, 1)
-    attendancechake = attendance(checkAttendance)
-    if attendancechake == 1:
-        check = random.randint(1, 2)
-        empWorkingHr = workingHr(check)
-        totalEmpHours += empWorkingHr
+    """
+        Description:
+            Function to Calculate Hour
+        Parameter:
+            No Parameter
+        Return:
+            returning the total working Hour
+    """
+    totalEmpHours=0
+    for i in range(20):
+        checkAttendance = random.randint(0, 1)
+        attendancechake = attendance(checkAttendance)
+        if attendancechake == 1:
+            check = random.randint(1, 2)
+            empWorkingHr = workingHr(check)
+            totalEmpHours += empWorkingHr
+            
 
-    if totalEmpHours >= 100:
-        break
+        if totalEmpHours >= 100:
+            break
 
-totalWage = (wagePerHour*totalEmpHours)
-print("Total Working Days in month ", i+1)
-print("Total Working Hour is ",totalEmpHours)
-print("Monthly Employee Wage= ", totalWage)
+    totalWage = (wagePerHour*totalEmpHours)
+    print("Total Working Days in month ", i+1)
+    print("Total Working Hour is ",totalEmpHours)
 
+calculateWage()
