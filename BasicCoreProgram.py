@@ -1,17 +1,36 @@
 '''
 @Author: Nikita
-@Date: 2022-04-03 18: 30: 00
+@Date: 2022-04-03 19: 14: 00
 @Last Modified by: Nikita
-@Last Modified time: 2022-04-03 18:30:00
-@Title: Take User Input and Replace String
+@Last Modified time: 2022-04-03 19:14:00
+@Title: coin flip Program to calculate percentage of Haid vs Tail
 '''
-old_string = "Hello <<UserName>>, How are you?"
-input = input("Enter Name: ")
 
-if len(input)>3:
-    new_string = old_string.replace("<<UserName>>", input)
-    print(new_string)
-    
-else: 
-    print("Enter a Valid User Name: ")
-    
+import random
+
+def flipCoin():
+    """
+        Description:
+            Function to calculate percentage of haid vs tail
+        Parameter:
+            No parameter
+        Return:
+            returning the percentage of Head vs Tail
+    """
+    no_of_flip=int(input("How Many times You want to flip coin "))
+    tail=0
+    tailPecentage=0
+    for i in range(no_of_flip):
+        coinFlip=random.randint(0,1)
+
+        if coinFlip<0.5:
+            tail+=1
+            tailPecentage=(tail/no_of_flip)*100
+
+        else:
+            headPercentage=100-tailPecentage
+
+    return print("Percentage of head ", headPercentage, "vs Tail is ",tailPecentage)
+
+flipCoin()
+
